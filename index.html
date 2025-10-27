@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="id">
+  <!-- Menunjukkan halaman berbahasa indonesia -->
+<head>
+  <meta charset="UTF-8" /> 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <!-- Biar tampilannya responsif -->
+  <title>Sistem Informasi Kabupaten Gunungkidul</title> <!-- Judul halaman web -->
+
+  <!-- Bagian CSS utama untuk gaya tampilan -->
+  <style> 
+    body { 
+      font-family: "Poppins", sans-serif; /* Mengatur jenis font utama yang dipakai */
+      margin: 0;
+      background: linear-gradient(to right, #e0f7fa, #e8f5e9); 
+      color: #333;
+    }
+    
+    header { 
+      background: #00796b;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 26px;
+      font-weight: bold;
+      letter-spacing: 1px;
+    }
+
+    .container {
+      display: flex; /* Membagi layout jadi dua: navigasi dan menu utama */
+      min-height: 90vh;
+    }
+
+    nav {
+      width: 25%; /* Lebar sidebar navigasi */
+      background-color: #004d40;
+      color: white;
+      padding: 20px;
+    }
+
+    nav h3 {
+      text-align: center;
+      border-bottom: 2px solid #80cbc4;
+      padding-bottom: 10px;
+    }
+
+    nav ul {
+      list-style-type: none; 
+      padding: 0;
+    }
+
+    nav ul li {
+      background: #00796b;
+      margin: 10px 0;
+      padding: 12px;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer; /* tanda saat diklik ada warnanya gitu */
+      transition: 0.3s;
+    }
+
+    nav ul li:hover {
+      background: #26a69a; /* warna berubah saat dihover */
+    }
+
+    main {
+      flex-grow: 1; /* biar lebar bagian utama menyesuaikan */
+      background: #ffffff;
+      padding: 30px;
+      border-left: 4px solid #004d40; /* Garis pemisah kiri */
+    }
+
+    h2 {
+      color: #004d40;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    th, td {
+      border: 1px solid #bdbdbd;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #80cbc4;
+      color: #004d40;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f1f8e9;
+    }
+
+    .hidden {
+      display: none; /* Disembunyikan saat tidak dipilih */
+    }
+  </style>
+</head>
+<body> 
+  <!-- Bagian Header -->
+  <header> 
+    <img src="Logo_Kabupaten_GunungKidul.jpg" alt="Logo Kabupaten Gunung Kidul"> <!-- Logo kabupaten -->
+    <h1>SISTEM INFORMASI KABUPATEN GUNUNGKIDUL</h1> <!-- Judul di header -->
+  </header>
+
+  <!-- CSS tambahan khusus header (logo di samping teks) -->
+  <style> 
+    header { 
+      display: flex; 
+      align-items: center; 
+      background-color: #ffffff; 
+      padding: 10px 20px; 
+      border-bottom: 2px solid #00897b; 
+    } 
+    header img { 
+      height: 80px; /* Ukuran logo */
+      margin-right: 15px; /* Jarak antara logo dan teks */
+    } 
+    header h1 { 
+      font-size: 22px; 
+      font-weight: bold; 
+      color: #004d40; 
+    } 
+  </style>
+
+  <!-- Bagian kontainer utama (sidebar + konten) -->
+  <div class="container">
+    <!-- Sidebar navigasi -->
+    <nav>
+      <h3>Menu Informasi</h3>
+      <ul>
+        <!-- Tombol menu yang akan menampilkan konten berbeda -->
+        <li onclick="showContent('penduduk')">Penduduk</li>
+        <li onclick="showContent('geografi')">Geografi dan Iklim</li>
+        <li onclick="showContent('sosial')">Sosial</li>
+        <li onclick="showContent('pariwisata')">Pariwisata</li>
+      </ul>
+    </nav>
+
+    <!-- Bagian utama yang menampilkan isi -->
+    <main>
+
+      <!-- BAGIAN 1: DATA PENDUDUK -->
+      <section id="penduduk" class="content">
+        <h2>Data Penduduk Kabupaten Gunungkidul</h2>
+        <table>
+          <tr>
+            <th>No</th>
+            <th>Kecamatan</th>
+            <th>Luas Wilayah (km²)</th>
+            <th>Jumlah Penduduk</th>
+            <th>Kepadatan (jiwa/km²)</th>
+          </tr>
+          <!-- Isi tabel data penduduk -->
+          <tr><td>1</td><td>Wonosari</td><td>74,86</td><td>90.753</td><td>1.212</td></tr>
+          <tr><td>2</td><td>Semanu</td><td>104,60</td><td>60.619</td><td>580</td></tr>
+          <tr><td>3</td><td>Ponjong</td><td>103,31</td><td>56.348</td><td>545</td></tr>
+          <tr><td>4</td><td>Semin</td><td>82,63</td><td>58.032</td><td>702</td></tr>
+          <tr><td>5</td><td>Karangmojo</td><td>76,86</td><td>57.043</td><td>742</td></tr>
+          <tr><td>6</td><td>Playen</td><td>107,32</td><td>62.627</td><td>584</td></tr>
+          <tr><td>7</td><td>Rongkop</td><td>81,28</td><td>29.684</td><td>365</td></tr>
+          <tr><td>8</td><td>Tepus</td><td>104,65</td><td>36.543</td><td>349</td></tr>
+          <tr><td>9</td><td>Girisubo</td><td>91,24</td><td>25.567 </td><td>280</td></tr>
+          <tr><td>10</td><td>Patuk</td><td>71,99</td><td>35.175</td><td>489</td></tr>
+          <tr><td>11</td><td>Tanjungsari</td><td>70,42</td><td>29.509</td><td>419</td></tr>
+          <tr><td>12</td><td>Gedangsari</td><td>68,29</td><td>40.315</td><td>590</td></tr>
+          <tr><td>13</td><td>Ngawen</td><td>50,29</td><td>35.602</td><td>708</td></tr>
+          <tr><td>14</td><td>Saptosari</td><td>86,73/td><td>40.308</td><td>465</td></tr>
+          <tr><td>15</td><td>Nglipar</td><td>73,73</td><td>33.892</td><td>460</td></tr>
+          <tr><td>16</td><td>Paliyan</td><td>60,28</td><td>33.265</td><td>552</td></tr>
+          <tr><td>17</td><td>Panggang</td><td>97,54</td><td>30.023</td><td>308</td></tr>
+          <tr><td>18</td><td>Purwosari</td><td>69,29</td><td>21.317</td><td>308</td></tr>
+        </table>
+      </section>
+
+      <!-- BAGIAN 2: GEOGRAFI DAN IKLIM -->
+      <section id="geografi" class="content hidden">
+        <h2>Geografi dan Iklim</h2>
+        <table>
+          <tr>
+            <th>Aspek Geografi dan Iklim</th>
+            <th>Keterangan</th>
+          </tr>
+          <!-- Deskripsi kondisi geografis Gunungkidul -->
+          <tr><td>Letak Geografis</td><td>Terletak di bagian tenggara Provinsi Daerah Istimewa Yogyakarta, antara 7°46’ – 8°09’ LS dan 110°21’ – 110°50’ BT</td>
+          <tr><td>Batas Wilayah</td><td>Utara: Kabupaten Sleman dan Klaten (Jawa Tengah)<br> Timur: Kabupaten Wonogiri (Jawa Tengah)<br> Selatan: Samudra Hindia<br> Barat: Kabupaten Bantul</td>
+          <tr><td>Topografi</td><td>Didominasi wilayah perbukitan karst (Gunung Sewu) di bagian selatan dan dataran bergelombang di bagian utara</td>
+          <tr><td>Sumber Daya Alam Utama</td><td>Batu kapur, air tanah bawah karst, serta potensi lahan pertanian tadah hujan dan kehutanan</td>
+        </table>
+        <!-- CSS tambahan untuk perataan teks di kolom 2 -->
+        <style>
+          #geografi table td:nth-child(2) {
+            text-align: justify;     
+            padding-right: 10px;     
+          }
+        </style>
+      </section>
+
+      <!-- BAGIAN 3: SOSIAL DAN BUDAYA -->
+      <section id="sosial" class="content hidden"> 
+        <h2>Kehidupan Sosial</h2>
+        <p>
+          Masyarakat Kabupaten Gunungkidul dikenal memiliki solidaritas sosial yang tinggi.
+          Budaya gotong royong masih kuat, terutama dalam kegiatan membangun rumah, memperbaiki jalan desa,
+          dan acara adat.
+        </p>
+
+        <h3>Tradisi dan Budaya</h3> 
+        <p>
+          Kehidupan sosial masyarakat juga diwarnai oleh berbagai tradisi yang masih lestari hingga kini:
+        </p>
+        <ul>
+          <li><b>Rasulan</b> — upacara selamatan desa sebagai ungkapan rasa syukur atas hasil panen dan keselamatan warga.</li>
+          <li><b>Kenduri</b> — tradisi doa bersama dan makan bersama sebagai bentuk kebersamaan dan gotong royong.</li>
+          <li><b>Nyadran</b> — ziarah ke makam leluhur menjelang bulan Ramadhan untuk mendoakan arwah keluarga.</li>
+          <li><b>Pranata Mangsa</b> — sistem penanggalan tradisional Jawa yang digunakan petani Gunungkidul
+            untuk menentukan waktu tanam dan berlayar.
+          </li>
+        </ul>
+
+        <h3>Kegiatan Sosial Masyarakat</h3>
+        <ul>
+          <li>Kerja bakti membersihkan lingkungan setiap minggu.</li>
+          <li>Arisan dan pengajian rutin di tingkat RT/RW.</li>
+          <li>Karang taruna aktif mengadakan kegiatan olahraga, lomba seni, dan bakti sosial.</li>
+        </ul>
+      </section>
+
+      <!-- BAGIAN 4: PARIWISATA -->
+      <section id="pariwisata" class="content hidden">
+        <h2>Pariwisata</h2>
+        <div class="tour-container">
+          <!-- Kartu wisata 1 -->
+          <div class="tour-card">
+            <img src="pantai-indrayanti.jpg" alt="Pantai Indrayanti">
+            <div class="tour-info">
+              <h3>Pantai Indrayanti</h3>
+              <p>Pantai yang terkenal dengan pasir putih dan pemandangan laut birunya. Fasilitasnya lengkap dan cocok untuk wisata keluarga.</p>
+            </div>
+          </div>
+
+          <!-- Kartu wisata 2 -->
+          <div class="tour-card">
+            <img src="Goapindul.jpg" alt="Gua Pindul">
+            <div class="tour-info">
+              <h3>Gua Pindul</h3>
+              <p>Objek wisata susur gua dengan ban pelampung di aliran sungai bawah tanah yang unik dan menantang.</p>
+            </div>
+          </div>
+
+          <!-- Kartu wisata 3 -->
+          <div class="tour-card">
+            <img src="pengilon.jpg" alt="Bukit Pengilon">
+            <div class="tour-info">
+              <h3>Bukit Pengilon</h3>
+              <p>Bukit Pengilon menyuguhkan pemandangan laut dan perbukitan hijau yang memukau, sempurna untuk trekking, camping, dan menikmati sunset indah.</p>
+            </div>
+          </div>
+
+          <!-- Kartu wisata 4 -->
+          <div class="tour-card">
+            <img src="baron.jpg" alt="Pantai Baron">
+            <div class="tour-info">
+              <h3>Pantai Baron</h3>
+              <p>Pantai yang terkenal dengan muara sungai kecil di tengah pantai dan hasil laut segarnya.</p>
+            </div>
+          </div>
+
+          <!-- CSS khusus untuk tata letak wisata -->
+          <style>
+            .tour-container {
+              display: flex;
+              flex-wrap: wrap;
+              gap: 20px;
+              margin-top: 20px;
+            }
+
+            .tour-card {
+              background-color: #f8f8f8;
+              border-radius: 10px;
+              overflow: hidden;
+              width: 300px;
+              box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+              transition: transform 0.2s;
+            }
+
+            .tour-card:hover {
+              transform: translateY(-5px);
+            }
+
+            .tour-card img {
+              width: 100%;
+              height: 180px;
+              object-fit: cover;
+            }
+
+            .tour-info {
+              padding: 15px;
+            }
+
+            .tour-info h3 {
+              color: #005f5f;
+              margin-bottom: 8px;
+            }
+
+            .tour-info p {
+              color: #333;
+              font-size: 14px;
+              line-height: 1.4;
+            }
+          </style>
+      </section>
+    </main>
+  </div>
+
+  <!-- SCRIPT UNTUK MENGUBAH TAMPILAN KONTEN -->
+  <script>
+    function showContent(id) {
+      document.querySelectorAll('.content').forEach(c => c.classList.add('hidden')); // Sembunyikan semua section
+      document.getElementById(id).classList.remove('hidden'); // Tampilkan section yang diklik
+    }
+  </script>
+</body>
+</html>
